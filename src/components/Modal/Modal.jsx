@@ -8,10 +8,7 @@ const modalRoot = document.getElementById('modal-root');
 const Modal = ({ close, children }) => {
   const closeModal = useCallback(
     e => {
-      if (e.code === 'Escape') {
-        close();
-      }
-      if (e.target === e.currentTarget) {
+      if (e.target === e.currentTarget || e.code === 'Escape') {
         close();
       }
     },
